@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <label for="name">Name</label>
+    <input type="string" id="name" name="name">
+    <br> -->
+
+
+
+    <label for="tableNum">Tabellnr:</label>
+	<select id="tableNum">
+		<!-- <option value="stockholm">Stockholm</option>
+		<option value="goteborg">Göteborg</option>
+		<option value="malmo">Malmö</option> -->
+		<option value="29">29</option>
+		<option value="30">30</option>
+		<option value="31">31</option>
+		<option value="32">32</option>
+	</select>
+
+    <label for="hours">Arbetade timmar:</label>
+    <input type="number" id="hours" name="hours">
+    <br>
+
+    <label for="salaryHour">Timlön:</label>
+    <input type="number" id="salaryHour" name="salaryHour"><br>
+
+    <label for="salaryMonthly">Månadslön:</label>
+    <input type="number" id="salaryMonthly" name="salaryMonthly"><br>
+
+    <!-- <p>The tax in Stockholm is: 33%</p> -->
+
+	<button onclick="getValue()">Get Value</button>
+	<p id="result"></p>
+    
+    <button onclick="calculateSalary()">Calculate Salary</button>
+    
+    <p id="salary"></p>
+
+
+      
+
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

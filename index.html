@@ -1,30 +1,22 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <!-- <label for="name">Name</label>
-    <input type="string" id="name" name="name">
-    <br> -->
-
-
-
+  </head>
+  <body>
+    <!-- 
     <label for="tableNum">Tabellnr:</label>
 	<select id="tableNum">
-		<!-- <option value="stockholm">Stockholm</option>
-		<option value="goteborg">Göteborg</option>
-		<option value="malmo">Malmö</option> -->
 		<option value="29">29</option>
 		<option value="30">30</option>
 		<option value="31">31</option>
 		<option value="32">32</option>
 	</select>
 
-    <label for="hours">Arbetade timmar:</label>
-    <input type="number" id="hours" name="hours">
+    <label for="workedHours">Arbetade timmar:</label>
+    <input type="number" id="workedHours" name="workedHours">
     <br>
 
     <label for="salaryHour">Timlön:</label>
@@ -33,20 +25,37 @@
     <label for="salaryMonthly">Månadslön:</label>
     <input type="number" id="salaryMonthly" name="salaryMonthly"><br>
 
-    <!-- <p>The tax in Stockholm is: 33%</p> -->
-
-	<button onclick="getValue()">Get Value</button>
-	<p id="result"></p>
     
     <button onclick="calculateSalary()">Calculate Salary</button>
     
-    <p id="salary"></p>
+    <p id="salary"></p> -->
 
+    <label for="tableNum">Tabellnr:</label>
+    <select id="tableNum">
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      <option value="32">32</option>
+      <option value="33">33</option>
+      <option value="34">34</option>
+      <option value="35">35</option>
+      <option value="36">36</option>
+      <option value="37">37</option>
+      <option value="38">38</option>
+      <option value="39">39</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+    </select>
 
-      
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary" />
 
+    <button onclick="calculateSalary()">Calculate Salary</button>
+
+    <p id="result"></p>
 
     <script src="main.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

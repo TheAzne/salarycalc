@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('btnTableReset').addEventListener('click', fnAppReset);
 
     // DOM changes Todo
-
+    
 
 });
 

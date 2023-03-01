@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('btnTableReset').addEventListener('click', fnAppReset);
 
 });
-/* Dom Change */
+/* Dom change  Credit: https://fek.io/blog/how-to-observe-changes-to-the-dom-without-using-a-java-script-framework/ */
 
 
 /* 'App' Reset */
@@ -76,7 +76,6 @@ function fnTableAdd(strName, iSalary, iTaxe) {
 // Remvoes all entry from table
 function fnTableReset() {
     console.log('Table reset');
-    
     var tableHeaderRowCount = 1;
     var rowCount = elemTable.rows.length;
     for (var i = tableHeaderRowCount; i < rowCount; i++) {
@@ -88,7 +87,11 @@ function fnTableReset() {
 
 // Edit Entry
 
-// Delete Entry
+// Delete Single Entry
+function fnTableDeleteEntry(iEntryId){
+    elemTable.deleteRow(iEntryId);
+    iTableCurrent = iTableCurrent -1;
+}
 
 // Add/Remove btn for table entry
 function fnTableAddBtn(fnBtnType, iEntryId) {

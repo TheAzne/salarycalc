@@ -21,9 +21,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('btnAdd').addEventListener('click', fnAdd);
     document.getElementById('btnTableReset').addEventListener('click', fnAppReset);
 
-});
-/* Dom change  Credit: https://fek.io/blog/how-to-observe-changes-to-the-dom-without-using-a-java-script-framework/ */
+    // DOM changes Todo
 
+
+});
 
 /* 'App' Reset */
 function fnAppReset (){

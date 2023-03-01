@@ -1,4 +1,4 @@
 /* Taxes */
-window.CalcTaxe = function fnCalcTaxe(iSalary){
-    return 2000;
+window.CalcTaxe = function fnCalcTaxe(iSalary, iTaxe){
+    return iSalary / iTaxe;
 }

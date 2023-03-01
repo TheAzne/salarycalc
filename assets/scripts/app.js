@@ -27,7 +27,7 @@ function fnAdd(e){
    
     
     // Process input / data
-    let iTaxe = CalcTaxe(elemSalary);
+    let iTaxe = CalcTaxe(elemSalary, elemTaxe);
     
     
     

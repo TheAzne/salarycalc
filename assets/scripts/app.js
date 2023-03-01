@@ -98,6 +98,7 @@ function fnTableReset() {
 // Edit Entry
 
 // Delete Single Entry
+// ToDo: add some kind of check before deleting
 function fnTableDeleteEntry(e) {
     elemTable.deleteRow(this.getAttribute('data-url'));
     iTableCurrent = iTableCurrent - 1;

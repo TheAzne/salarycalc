@@ -35,20 +35,21 @@ async function getTax(tableNum, changedValue) {
     changedValue += 100;
     return getTax(tableNum, changedValue);
   }
+  console.log(changedValue);
 
   return { data, changedValue };
 }
 
-// submitButton.addEventListener("click", async () => {
-//   if (salaryInput.value.slice(2) != "00") {
-//     changedValue = parseInt(salaryInput.value);
-//     changedValue = changedValue - (changedValue % 100);
-//   }
+submitButton.addEventListener("click", async () => {
+  if (salaryInput.value.slice(2) != "00") {
+    changedValue = parseInt(salaryInput.value);
+    changedValue = changedValue - (changedValue % 100);
+  }
 
-//   let { data } = await getTax(tableNum.value, changedValue);
-//   taxData = await data.results[0]["kolumn 1"];
-//   displayTaxData(changedValue, netSalary, taxData);
-// });
+  let { data } = await getTax(tableNum.value, changedValue);
+  taxData = await data.results[0]["kolumn 1"];
+  displayTaxData(changedValue, netSalary, taxData);
+});
 
 submitButton.addEventListener("click", async () => {
 

@@ -1,17 +1,24 @@
 /* Elements */
+let elemPrint;
+
 let elemTable;
 let elemName,elemSalary, elemTaxe;
+let elemTotalExpense;
 
 /* Vars */
 let iTableCurrent = 1;
+let iTotalExpense;
+
 
 
 /* Entry Point */
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded');
-
+    elemPrint = document.getElementById('btnPrint');
     elemTable = document.getElementById('tblSalary');
+    elemTotalExpense = document.getElementById('totalExpense');
 
+    document.getElementById('btnPrint').addEventListener('click', fnPrint);
     document.getElementById('btnAdd').addEventListener('click', fnAdd);
 });
 
@@ -34,6 +41,10 @@ function fnAdd(e){
     // Add to table
     fnTableAdd(elemName, elemSalary, iTaxe);
 
+    // Update total expense
+    iTotalExpense = elemSalary;
+    fnTotalExpense(iTotalExpense);
+
 }
 
 function fnTableAdd(strName, iSalary, iTaxe) {
@@ -44,6 +55,8 @@ function fnTableAdd(strName, iSalary, iTaxe) {
     row.insertCell(3).innerHTML = iTaxe;
     row.insertCell(4).innerHTML = iTaxe;
 
+    // Increase off set
+    iTableCurrent = iTableCurrent + 1;
 
 }
 
@@ -52,3 +65,8 @@ function fnResetTable(){
 
 }
 
+
+// Total cost
+function fnTotalExpense(strInput){
+    elemTotalExpense.textContent = strInput; 
+}

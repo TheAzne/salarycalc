@@ -26,3 +26,4 @@ async function fnCalcAmountOfTax(tableNum, minNum, maxNum) {
     }
 
 }
+

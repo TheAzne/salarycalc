@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     document.getElementById('btnPrint').addEventListener('click', fnPrint);
     document.getElementById('btnAdd').addEventListener('click', fnAdd);
+
 });
 
 function fnAdd(e){
@@ -55,6 +56,11 @@ function fnTableAdd(strName, iSalary, iTaxe) {
     row.insertCell(3).innerHTML = iTaxe;
     row.insertCell(4).innerHTML = iTaxe;
 
+    // Edit / Delete entry button
+    row.insertCell(5).innerHTML = fnTableAddBtn('delete',iTableCurrent);
+    row.insertCell(6).innerHTML = fnTableAddBtn('edit',iTableCurrent);
+
+
     // Increase off set
     iTableCurrent = iTableCurrent + 1;
 
@@ -65,6 +71,22 @@ function fnResetTable(){
 
 }
 
+// Edit Entry
+
+// Delete Entry
+
+// Add/Remove btn for table entry
+function fnTableAddBtn(fnBtnType, iEntryId){
+    if(fnBtnType == 'delete')
+    return '<button class="btn btn-outline-danger"'+ fnTableBtnGetDataUrl(iEntryId) +'><i class="bi bi-trash"></i></button>';
+    if(fnBtnType == 'edit')
+    return '<button class="btn btn-outline-info"'+ fnTableBtnGetDataUrl(iEntryId) +'><i class="bi bi-pen"></i></button>'
+}
+
+// Naming D:
+function fnTableBtnGetDataUrl(iEntryId){
+    return 'data-url="'+ iEntryId +'"';
+}
 
 // Total cost
 function fnTotalExpense(strInput){

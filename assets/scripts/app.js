@@ -32,6 +32,9 @@ function fnAppRenewEvent() {
     document.querySelectorAll('.btn-table-delete').forEach(
         tableBtnDelete => tableBtnDelete.addEventListener('click', fnTableDeleteEntry)
     );
+    document.querySelectorAll('.btn-table-edit').forEach(
+        tableBtnDelete => tableBtnDelete.addEventListener('click', fnTableDeleteEntry)
+    );
 }
 /* 'App' Reset */
 function fnAppReset() {
@@ -96,6 +99,9 @@ function fnTableReset() {
 }
 
 // Edit Entry
+function fnTableEditEntry(e){
+
+}
 
 // Delete Single Entry
 // ToDo: add some kind of check before deleting
@@ -109,7 +115,7 @@ function fnTableAddBtn(fnBtnType, iEntryId) {
     if (fnBtnType == 'delete')
         return '<button class="btn btn-outline-danger btn-table-delete"' + fnTableBtnGetDataUrl(iEntryId) + '><i class="bi bi-trash"></i></button>';
     if (fnBtnType == 'edit')
-        return '<button class="btn btn-outline-info"' + fnTableBtnGetDataUrl(iEntryId) + '><i class="bi bi-pen"></i></button>'
+        return '<button class="btn btn-outline-info"' + fnTableBtnGetDataUrl(iEntryId) + 'data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pen"></i></button>'
 }
 
 // Naming D:

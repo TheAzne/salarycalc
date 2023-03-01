@@ -9,8 +9,6 @@ let elemTotalExpense;
 let iTableCurrent = 1;
 let iTotalExpense;
 
-
-
 /* Entry Point */
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded');
@@ -21,11 +19,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Events
     document.getElementById('btnPrint').addEventListener('click', fnPrint);
     document.getElementById('btnAdd').addEventListener('click', fnAdd);
-    document.getElementById('btnTableReset').addEventListener('click', fnTableReset);
+    document.getElementById('btnTableReset').addEventListener('click', fnAppReset);
 
 });
 /* Dom Change */
 
+
+/* 'App' Reset */
+function fnAppReset (){
+    fnTableReset();
+    iTotalExpense = 0;
+}
 
 function fnAdd(e) {
     e.preventDefault();
@@ -72,11 +76,13 @@ function fnTableAdd(strName, iSalary, iTaxe) {
 // Remvoes all entry from table
 function fnTableReset() {
     console.log('Table reset');
+    
     var tableHeaderRowCount = 1;
     var rowCount = elemTable.rows.length;
     for (var i = tableHeaderRowCount; i < rowCount; i++) {
         elemTable.deleteRow(tableHeaderRowCount);
     }
+    iTableCurrent = 1;
 
 }
 
@@ -97,7 +103,10 @@ function fnTableBtnGetDataUrl(iEntryId) {
     return 'data-url="' + iEntryId + '"';
 }
 
+/* Extra logic / functions */
+
 // Total cost
 function fnTotalExpense(strInput) {
     elemTotalExpense.textContent = strInput;
 }
+

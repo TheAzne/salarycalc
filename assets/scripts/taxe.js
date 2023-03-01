@@ -1,6 +1,6 @@
 // Return total amount of tax
 function fnCalcTaxe(iSalary, iTaxe){
-    return iSalary / iTaxe;
+    return 'Unknown';
 }
 
 // Returns Employe Fee as number

@@ -1,4 +1,9 @@
+
+.print-hidde,
 nav,
-#calc-form {
-    display: none;
+#calc-form,
+.btn-table-delete,
+.btn-table-edit,
+#btn-table-reset {
+    display: none !important;
 }

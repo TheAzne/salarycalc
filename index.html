@@ -43,7 +43,7 @@
           <form>
             <div class="mb-3">
               <label for="inputName" class="form-label">Name</label>
-              <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="inputName">
             </div>
             <div class="mb-3">
               <label for="inputSalary" class="form-label">Salary</label>
@@ -66,23 +66,34 @@
                 <th scope="col">Salary</th>
                 <th scope="col">Taxes</th>
                 <th scope="col">Final</th>
-                <th scope="col">Delete</th>
-                <th scope="col">Edit</th>
+                <th scope="col" class="print-hidde">Delete</th>
+                <th scope="col" class="print-hidde">Edit</th>
               </tr>
             </thead>
             <tbody>
             </tbody>
           </table>
           <!-- Modal for edit entry -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modalEditEntry" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit entry</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <div class="mb-3">
+                    <label for="modalInputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="modalInputSalary" class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="inputSalary">
+                  </div>
+                  <div class="mb-3">
+                    <label for="modalInputTaxe" class="form-label">Taxe</label>
+                    <input type="number" class="form-control" id="inputTaxe">
+                  </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -91,10 +102,11 @@
               </div>
             </div>
           </div>
-          
+          <!-- End of Modal-->
+
           <div class="col-lg-12">
             <p>Total: <span id="totalExpense"></span></p>
-            <button type="button" id="btnTableReset" class="btn btn-outline-primary float-end"
+            <button type="button" id="btn-table-reset" class="btn btn-outline-primary float-end"
               title="Reset Table and remove all entrys">
               <i class="bi bi-arrow-counterclockwise"></i>
             </button>
@@ -102,7 +114,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <footer>

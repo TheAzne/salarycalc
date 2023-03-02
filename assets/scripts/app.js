@@ -19,21 +19,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Events
     document.getElementById('btnPrint').addEventListener('click', fnPrint);
     document.getElementById('btnAdd').addEventListener('click', fnAdd);
-    document.getElementById('btnTableReset').addEventListener('click', fnAppReset);
+    document.getElementById('btn-table-reset').addEventListener('click', fnAppReset);
 
     // DOM changes Todo
 
 
 });
 
-/*  */
+/* Temp solution for keeping track of changes inside tbl */
 function fnAppRenewEvent() {
     console.log('Renew event');
     document.querySelectorAll('.btn-table-delete').forEach(
         tableBtnDelete => tableBtnDelete.addEventListener('click', fnTableDeleteEntry)
     );
     document.querySelectorAll('.btn-table-edit').forEach(
-        tableBtnDelete => tableBtnDelete.addEventListener('click', fnTableDeleteEntry)
+        tableBtnEdit => tableBtnEdit.addEventListener('click', fnTableEditEntry)
     );
 }
 /* 'App' Reset */
@@ -52,10 +52,8 @@ function fnAdd(e) {
 
     // Validate input and sanitize
 
-
     // Process input / data
     let iTaxe = fnCalcTaxe(elemSalary, elemTaxe);
-
 
     // Add to table
     fnTableAdd(elemName, elemSalary, iTaxe);
@@ -100,7 +98,7 @@ function fnTableReset() {
 
 // Edit Entry
 function fnTableEditEntry(e){
-
+    console.log('Edit', this.getAttribute('data-url'));
 }
 
 // Delete Single Entry
@@ -115,7 +113,7 @@ function fnTableAddBtn(fnBtnType, iEntryId) {
     if (fnBtnType == 'delete')
         return '<button class="btn btn-outline-danger btn-table-delete"' + fnTableBtnGetDataUrl(iEntryId) + '><i class="bi bi-trash"></i></button>';
     if (fnBtnType == 'edit')
-        return '<button class="btn btn-outline-info"' + fnTableBtnGetDataUrl(iEntryId) + 'data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pen"></i></button>'
+        return '<button class="btn btn-outline-info btn-table-edit"' + fnTableBtnGetDataUrl(iEntryId) + 'data-bs-toggle="modal" data-bs-target="#modalEditEntry"><i class="bi bi-pen"></i></button>'
 }
 
 // Naming D:
